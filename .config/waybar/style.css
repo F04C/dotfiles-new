@@ -2,7 +2,7 @@
     font-family: SpaceMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 13px;
-    color: #FFF;
+    color: #ECEFF4;
 }
 
 window#waybar {
@@ -23,14 +23,6 @@ window#waybar.termite {
 window#waybar.chromium {
     background-color: #000000;
     border: none;
-}
-
-#custom-ml4w-welcome {
-    margin-right: 15px;
-    background-image: url("../assets/ml4w-icon-20.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 20px;
 }
 
 button {
@@ -54,7 +46,7 @@ button:hover {
 }
 
 #workspaces button.active {
-    background: #00b093;
+    background: #8FBCBB;
     transition-property: background;
     transition-duration: .5s;
 }
