@@ -30,9 +30,9 @@ echo "Removendo dependências órfãs com pacman..."
 yes | sudo pacman -Rns $(pacman -Qtdq)
 sleep 2
 
-echo "Removendo dependências órfãs com yay..."
-yes | yay -Qdtq | yay -Rns -
-sleep 2
+#echo "Removendo dependências órfãs com yay..."
+#yes | yay -Qdtq | yay -Rns -
+#sleep 2
 
 echo "Removendo dependências órfãs com paru..."
 yes | paru -Qdtq | paru -Rns -
