@@ -42,5 +42,5 @@ sleep 2
 echo "Limpando o cache do paru..."
 yes | paru -Scc
 sleep 2
-
+w
 echo "Limpeza concluída."
