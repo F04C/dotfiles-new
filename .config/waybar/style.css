@@ -8,7 +8,6 @@
 window#waybar {
     background-color: rgba(14, 16, 20, 0.5);
     border-radius: 5px;
-    transition-property: background-color;
     transition-duration: .5s;
 }
 
@@ -88,8 +87,10 @@ button:hover {
 #bluetooth,
 #mpd {
     padding: 0 5px;
-    margin-left: 4px;
     color: #fff;
+    background-color: #3b4252;
+    border-radius: 5px;
+    margin: 5px 4px;
 }
 
 #window,
@@ -97,13 +98,13 @@ button:hover {
     margin: 0 4px;
 }
 
-.modules-left>widget:first-child>#workspaces {
+/* .modules-left>widget:first-child>#workspaces {
     margin-left: 0;
-}
+} */
 
-.modules-right>widget:last-child>#workspaces {
+/* .modules-right>widget:last-child>#workspaces {
     margin-right: 0;
-}
+} */
 
 @keyframes blink {
     to {
@@ -126,21 +127,8 @@ label:focus {
     background-color: #000000;
 }
 
-#clock {
-    color: #fff;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
-#custom-exit {
-    color: red;
-    padding-right: 1px;
+#pulseaudio.microphone.source-muted {
+    background-color: #bf616a;
 }
 
 #temperature.critical {

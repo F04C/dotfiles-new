@@ -9,11 +9,11 @@
         "tooltip-format": "Power Menu"
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 17,
         "spacing": 10
     },
     "clock": {
-        "format": "{:L%A    %d/%B/%Y    %I:%M}",
+        "format": "<span color='#8FBCBB'> </span> {:L%A %d/%B/%Y | %I:%M}",
         "interval": 60,
         "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -81,6 +81,7 @@
         "tooltip": false,
         "format-muted": "  Muted",
         "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -d 1",
         "on-scroll-down": "pamixer -i 1",
         "scroll-step": 5,
@@ -104,6 +105,7 @@
         "format-source": " {volume}%",
         "format-source-muted": "  Muted",
         "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
