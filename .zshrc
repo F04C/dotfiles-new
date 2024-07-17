@@ -57,6 +57,7 @@ alias ls='ls --color'
 alias c='clear'
 alias cleanup='~/scripts/limpeza.sh'
 alias lg='lazygit'
+alias vim='nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
