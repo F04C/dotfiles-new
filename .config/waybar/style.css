@@ -45,7 +45,9 @@ button:hover {
 }
 
 #workspaces button.active {
-    background: #5e81ac;
+    background: #8fbcbb;
+    margin: 5px 1px;
+    border-radius: 15px;
     transition-property: background;
     transition-duration: .5s;
 }
