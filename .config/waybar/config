@@ -11,6 +11,7 @@
     ],
     "modules-right": [
         "group/system",
+        "tray",
         "custom/exit"
     ]
 }

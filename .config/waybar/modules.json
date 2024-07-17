@@ -42,8 +42,8 @@
         ]
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} ",
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon}  ",
         "format-muted": "",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
@@ -164,10 +164,9 @@
             "transition-left-to-right": false
         },
         "modules": [
-            "tray",
+            "pulseaudio",
             "battery",
-            "bluetooth",
-            "pulseaudio"
+            "bluetooth"
         ]
     }
 }
