@@ -7,7 +7,6 @@
 
 window#waybar {
     background-color: rgba(14, 16, 20, 0.5);
-    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -87,7 +86,10 @@ button:hover {
 #scratchpad,
 #bluetooth,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
+    background-color: #8FBCBB;
+    border-radius: 2px;
+    margin-left: 4px;
     color: #fff;
 }
 
@@ -102,17 +104,6 @@ button:hover {
 
 .modules-right>widget:last-child>#workspaces {
     margin-right: 0;
-}
-
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -148,22 +139,14 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
 #custom-exit {
     color: red;
-    padding-right: 13px;
-    margin-left: -5px;
+    padding-right: 1px;
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
-
 
 #tray>.passive {
     -gtk-icon-effect: dim;
@@ -172,12 +155,4 @@ label:focus {
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
 
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-    background-color: transparent;
 }
