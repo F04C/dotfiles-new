@@ -3,9 +3,11 @@
         "~/.config/waybar/modules.json"
     ],
     "height": 24,
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
     "layer": "top",
     "position": "top",
-    "mode": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
