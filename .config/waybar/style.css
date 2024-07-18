@@ -1,3 +1,5 @@
+@import url("/home/gdam/.cache/wal/colors-waybar.css");
+
 * {
     font-family: SpaceMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-weight: bold;
@@ -44,7 +46,7 @@ button:hover {
 }
 
 #workspaces button.active {
-    background: #8fbcbb;
+    background: @color5;
     margin: 5px 1px;
     border-radius: 15px;
     transition-property: background;
