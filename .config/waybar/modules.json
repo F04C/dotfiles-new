@@ -180,8 +180,7 @@
             "clock",
             "cpu",
             "memory",
-            "temperature",
-            "disk"
+            "temperature"
         ]
     },
     "group/system": {
@@ -193,11 +192,25 @@
         },
         "modules": [
             "pulseaudio",
-            "battery",
             "bluetooth"
         ]
     },
     "hyprland/window": {
         "format": "󰣇 {}"
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout"
+    },
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "󱍷",
+            "updated": "󰂪"
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300",
+        "on-click": "kitty --name dotfiles-floating ~/dotfiles/scripts/installupdates.sh"
     }
 }

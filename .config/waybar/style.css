@@ -8,7 +8,6 @@
 window#waybar {
     background-color: rgba(14, 16, 20, 0.5);
     border-radius: 5px;
-    transition-duration: .5s;
 }
 
 window#waybar.hidden {
@@ -87,7 +86,9 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #bluetooth,
-#mpd {
+#mpd,
+#custom-power,
+#custom-updates {
     padding: 0 5px;
     color: #fff;
     background-color: #3b4252;
@@ -144,4 +145,16 @@ label:focus {
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
 
+}
+
+#custom-power {
+    font-size: 17px;
+    color: #bf616a;
+    padding-left: 4.5px;
+    padding-right: 10px;
+    margin-right: 5px;
+}
+
+#custom-updates {
+    padding-right: 7.9px;
 }

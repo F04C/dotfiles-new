@@ -18,8 +18,11 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/updates",
+        "battery",
         "group/system",
         "pulseaudio#microphone",
-        "tray"
+        "tray",
+        "custom/power"
     ]
 }
