@@ -3,11 +3,6 @@
         "interval": 30,
         "format": " {used}/{total}"
     },
-    "custom/exit": {
-        "format": " ",
-        "on-click": "wlogout",
-        "tooltip-format": "Power Menu"
-    },
     "tray": {
         "icon-size": 17,
         "spacing": 10
@@ -79,7 +74,7 @@
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": "  Muted",
+        "format-muted": "  Sem som",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -d 1",
@@ -103,7 +98,7 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
-        "format-source-muted": "  Muted",
+        "format-source-muted": "  Mutado",
         "on-click": "pamixer --default-source -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 5",
@@ -149,26 +144,6 @@
             "󰁹"
         ]
     },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{}{icon}",
-        "format-icons": {
-            "notification": " <span foreground='red'><sup></sup></span>",
-            "none": " ",
-            "dnd-notification": " <span foreground='red'><sup></sup></span>",
-            "dnd-none": " ",
-            "inhibited-notification": " <span foreground='red'><sup></sup></span>",
-            "inhibited-none": " ",
-            "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": " "
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
     "group/hardware": {
         "orientation": "inherit",
         "drawer": {
@@ -195,9 +170,6 @@
             "bluetooth"
         ]
     },
-    "hyprland/window": {
-        "format": "󰣇 {}"
-    },
     "custom/power": {
         "format": "",
         "on-click": "wlogout"
@@ -212,5 +184,17 @@
         "exec-if": "which waybar-module-pacman-updates",
         "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300",
         "on-click": "kitty --name dotfiles-floating ~/dotfiles/scripts/installupdates.sh"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "Conectado  ",
+        "format-disconnected": "Desconectado  ",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
     }
 }

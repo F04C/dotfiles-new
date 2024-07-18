@@ -22,6 +22,7 @@
         "battery",
         "group/system",
         "pulseaudio#microphone",
+        "network",
         "tray",
         "custom/power"
     ]
