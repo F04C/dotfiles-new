@@ -8,7 +8,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "<span color='#8fbcbb'> </span> {:L%H:%M | %d/%B/%Y | %A }",
+        "format": "<span color='#8fbcbb'> </span> {:L%H:%M }",
         "interval": 60,
         "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
