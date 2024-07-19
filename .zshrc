@@ -63,7 +63,7 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Pywal integration
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # SDKMAN setup
 export SDKMAN_DIR="$HOME/.sdkman"
