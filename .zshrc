@@ -62,12 +62,9 @@ alias vim='nvim'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# Run pfetch on interactive shell
-if [[ -o interactive ]]; then
-    command -v pfetch &>/dev/null && pfetch
-fi
-
+# Pywal integration
 (cat ~/.cache/wal/sequences &)
+
 # SDKMAN setup
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

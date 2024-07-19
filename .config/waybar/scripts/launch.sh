@@ -3,22 +3,25 @@
 # ----------------------------------------------------- 
 # Quit all running waybar instances
 # ----------------------------------------------------- 
-killall waybar
-pkill waybar
+killall -q waybar
 sleep 0.2
 
-waybar
+waybar &
 
-[ -f "$HOME/.cache/wal/colors.sh" ] && . "$HOME/.cache/wal/colors.sh"
+# Load pywal colors if the file exists
+WAL_COLORS="$HOME/.cache/wal/colors.sh"
+[ -f "$WAL_COLORS" ] && source "$WAL_COLORS"
 
-pidof dunst && killall dunst
+# Quit any running dunst instances
+pkill -x dunst
 
-DUNST_FILE=~/.config/dunst/dunstrc
+DUNST_FILE="$HOME/.config/dunst/dunstrc"
 
-# update dunst based on pywal colors.
-sed -i '/background = /s/.*/    background = "'$color0'"/' $DUNST_FILE
-sed -i '/foreground = /s/.*/    foreground = "'$color2'"/' $DUNST_FILE
-sed -i '/frame_color = /s/.*/    frame_color = "'$color5'"/' $DUNST_FILE
+# Update dunst configuration based on pywal colors
+sed -i -e "s/^    background = .*/    background = \"$color0\"/" \
+       -e "s/^    foreground = .*/    foreground = \"$color2\"/" \
+       -e "s/^    frame_color = .*/    frame_color = \"$color5\"/" \
+       "$DUNST_FILE"
 
-dunst -config ~/.config/dunst/dunstrc > /dev/null 2>&1 &
-
+# Restart dunst with the updated configuration
+dunst -config "$DUNST_FILE" > /dev/null 2>&1 &
