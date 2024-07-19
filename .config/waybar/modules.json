@@ -192,8 +192,8 @@
             "updated": "󰂪"
         },
         "exec-if": "which waybar-module-pacman-updates",
-        "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300",
-        "on-click": "kitty --name dotfiles-floating ~/dotfiles/scripts/installupdates.sh"
+        "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
+        "on-click": "kitty --class dotfiles-floating ~/dotfiles/scripts/installupdates.sh"
     },
     "network": {
         "format": "{ifname}",

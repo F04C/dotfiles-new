@@ -34,28 +34,27 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-# Keybindings
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
 # History settings
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
-setopt appendhistory sharehistory hist_ignore_space hist_save_no_dups
+setopt appendhistory 
+setopt sharehistory 
+setopt hist_ignore_space 
+setopt hist_save_no_dups
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza --icons'
 alias c='clear'
-alias cleanup='~/scripts/limpeza.sh'
+alias cleanup='kitty --app-id dotfiles-floating ~/scripts/limpeza.sh'
 alias lg='lazygit'
 alias vim='nvim'
 
