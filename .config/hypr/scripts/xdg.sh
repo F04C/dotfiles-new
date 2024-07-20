@@ -4,10 +4,10 @@
 sleep 1
 
 # Mata todos os processos relacionados ao xdg-desktop-portal
-killall xdg-desktop-portal-hyprland
-killall xdg-desktop-portal-gtk
-killall xdg-desktop-portal-wlr
-killall xdg-desktop-portal-gnome
+killall -e xdg-desktop-portal-hyprland
+killall -e xdg-desktop-portal-gtk
+killall -e xdg-desktop-portal-wlr
+killall -e xdg-desktop-portal-gnome
 killall xdg-desktop-portal
 
 # Espera 1 segundo para garantir que todos os processos foram terminados
@@ -20,30 +20,6 @@ then
 elif command -v /usr/libexec/xdg-desktop-portal-hyprland &> /dev/null
 then
     /usr/libexec/xdg-desktop-portal-hyprland &
-fi
-
-# Espera 2 segundos para garantir que o xdg-desktop-portal-hyprland iniciou corretamente
-sleep 2
-
-# Inicia o xdg-desktop-portal-wlr
-if command -v /usr/lib/xdg-desktop-portal-wlr &> /dev/null
-then
-    /usr/lib/xdg-desktop-portal-wlr &
-elif command -v /usr/libexec/xdg-desktop-portal-wlr &> /dev/null
-then
-    /usr/libexec/xdg-desktop-portal-wlr &
-fi
-
-# Espera 2 segundos para garantir que o xdg-desktop-portal-wlr iniciou corretamente
-sleep 2
-
-# Inicia o xdg-desktop-portal-gtk
-if command -v /usr/lib/xdg-desktop-portal-gtk &> /dev/null
-then
-    /usr/lib/xdg-desktop-portal-gtk &
-elif command -v /usr/libexec/xdg-desktop-portal-gtk &> /dev/null
-then
-    /usr/libexec/xdg-desktop-portal-gtk &
 fi
 
 # Espera 2 segundos para garantir que o xdg-desktop-portal-gtk iniciou corretamente

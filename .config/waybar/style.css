@@ -33,10 +33,15 @@ button {
     border-radius: 0;
 }
 
+#workspaces{
+    background-color: #000000;
+    border-radius: 5px;
+}
+
 #workspaces button {
-    padding-left: 5px;
-    padding-right: 5px;
-    background-color: transparent;
+    background-color: #3b4252;
+    border-radius: 5px;
+    margin: 5px 3px;
     transition: color 200ms ease-in-out;
     color: #ffffff;
 }
