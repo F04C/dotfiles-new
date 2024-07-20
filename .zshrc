@@ -62,6 +62,11 @@ alias vim='nvim'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# Show Pfetch on interactive shell
+if [[ -o interactive ]]; then
+    command -v pfetch &>/dev/null && pfetch
+fi
+
 # Pywal integration
 (cat ~/.cache/wal/sequences &)
 
