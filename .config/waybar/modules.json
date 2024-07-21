@@ -5,7 +5,8 @@
   },
   "tray": {
     "icon-size": 17,
-    "spacing": 10
+    "spacing": 10,
+    "show-passive-items": true
   },
   "clock": {
     "format": "<span color='#8fbcbb'> </span> {:L%H:%M }",
@@ -61,7 +62,7 @@
     "format-icons": [""]
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "tooltip": false,
     "format-muted": "  Sem som",
     "on-click": "pamixer -t",
