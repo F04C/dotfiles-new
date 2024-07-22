@@ -80,7 +80,9 @@ button {
 #bluetooth,
 #mpd,
 #custom-power,
-#custom-updates {
+#custom-updates,
+#custom-notifications,
+#custom-spotify {
     padding: 0 9px;
     color: #fff;
     background-color: #3b4252;

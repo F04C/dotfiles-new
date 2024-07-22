@@ -14,7 +14,8 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-left": [
-        "group/hardware"
+        "group/hardware",
+        "custom/spotify"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -26,6 +27,7 @@
         "pulseaudio#microphone",
         "network",
         "tray",
+        "custom/notifications",
         "custom/power"
     ]
 }

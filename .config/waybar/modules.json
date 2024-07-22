@@ -30,7 +30,16 @@
     "interval": 10,
     "format": "󰍛 {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
   },
   "memory": {
     "states": {
@@ -59,7 +68,9 @@
     "format-critical": "{icon} {temperatureC}°C",
     "format": "{icon} {temperatureC}°C",
     "format-alt": "{icon} {temperatureF}°F",
-    "format-icons": [""]
+    "format-icons": [
+      ""
+    ]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -77,7 +88,12 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", "", ""]
+      "default": [
+        "",
+        "",
+        "",
+        ""
+      ]
     }
   },
   "pulseaudio#microphone": {
@@ -105,7 +121,13 @@
     "all-outputs": true,
     "on-click": "activate",
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     }
   },
   "battery": {
@@ -118,7 +140,19 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": [
+      "󰂃",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
   },
   "group/hardware": {
     "orientation": "inherit",
@@ -127,7 +161,12 @@
       "children-class": "not-memory",
       "transition-left-to-right": true
     },
-    "modules": ["clock", "cpu", "memory", "temperature"]
+    "modules": [
+      "clock",
+      "cpu",
+      "memory",
+      "temperature"
+    ]
   },
   "group/system": {
     "orientation": "inherit",
@@ -136,7 +175,10 @@
       "children-class": "not-memory",
       "transition-left-to-right": false
     },
-    "modules": ["pulseaudio", "bluetooth"]
+    "modules": [
+      "pulseaudio",
+      "bluetooth"
+    ]
   },
   "custom/power": {
     "format": "",
@@ -164,5 +206,42 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "nm-connection-editor"
+  },
+  "custom/notifications": {
+    "format": "{icon} {}",
+    "format-icons": {
+      "email-notification": "<span foreground='white'><sup></sup></span>",
+      "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
+      "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
+      "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
+      "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
+      "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+      "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
+      "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
+      "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+      "notification": "<span foreground='white'><sup></sup></span>",
+      "none": ""
+    },
+    "return-type": "json",
+    "exec-if": "pgrep spotify",
+    "exec": "~/dotfiles/.config/waybar/scripts/notifications.py",
+    "on-click": "sleep 0.1 && dunstctl history-pop",
+    "on-click-middle": "dunstctl history-clear",
+    "on-click-right": "dunstctl close-all",
+    "interval": 1,
+    "tooltip": true,
+    "escape": true
+  },
+  "custom/spotify": {
+    "exec": "~/dotfiles/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "exec-if": "which dunstctl",
+    "format": " {}",
+    "return-type": "json",
+    "on-click": "playerctl play-pause --player spotify",
+    "on-click-right": "playerctl next --player spotify",
+    "on-click-middle": "playerctl previous --player spotify",
+    "max-length": 25,
+    "escape": true,
+    "tooltip": true
   }
 }
