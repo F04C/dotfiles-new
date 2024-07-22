@@ -19,7 +19,7 @@ DUNST_FILE="$HOME/.config/dunst/dunstrc"
 
 # Update dunst configuration based on pywal colors
 sed -i -e "s/^    background = .*/    background = \"$color0\"/" \
-       -e "s/^    foreground = .*/    foreground = \"$color2\"/" \
+       -e "s/^    foreground = .*/    foreground = \"$color15\"/" \
        -e "s/^    frame_color = .*/    frame_color = \"$color5\"/" \
        "$DUNST_FILE"
 

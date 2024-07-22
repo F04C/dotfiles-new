@@ -11,7 +11,7 @@
     text_icon_padding = 0
     frame_width = 2
 
-    frame_color = "#88C0D0"
+    frame_color = "#8EBBBA"
     separator_color = frame
 
     sort = yes
@@ -39,18 +39,18 @@
     title = Dunst
     class = Dunst
 
-    corner_radius = 10
+    corner_radius = 2
     timeout = 5
 
 [urgency_low]
-    background = "#1b1e25"
-    foreground = "#95A2AD"
+    background = "#101218"
+    foreground = "#6F9293"
 
 [urgency_normal]
-    background = "#1b1e25"
-    foreground = "#95A2AD"
+    background = "#101218"
+    foreground = "#6F9293"
 
 [urgency_critical]
-    background = "#1b1e25"
-    foreground = "#95A2AD"
-    frame_color = "#88C0D0"
+    background = "#101218"
+    foreground = "#6F9293"
+    frame_color = "#8EBBBA"
