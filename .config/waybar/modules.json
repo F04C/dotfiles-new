@@ -223,7 +223,7 @@
       "none": ""
     },
     "return-type": "json",
-    "exec-if": "pgrep spotify",
+    "exec-if": "which dunstctl",
     "exec": "~/dotfiles/.config/waybar/scripts/notifications.py",
     "on-click": "sleep 0.1 && dunstctl history-pop",
     "on-click-middle": "dunstctl history-clear",
@@ -234,7 +234,7 @@
   },
   "custom/spotify": {
     "exec": "~/dotfiles/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "exec-if": "which dunstctl",
+    "exec-if": "pgrep spotify",
     "format": " {}",
     "return-type": "json",
     "on-click": "playerctl play-pause --player spotify",
