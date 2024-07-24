@@ -13,11 +13,10 @@ _isInstalledYay() {
     package="$1"
     check="$(yay -Qs --color always "${package}" | grep "local" | grep "${package} ")"
     if [ -n "${check}" ]; then
-        echo 0 # '0' significa 'true' no Bash
         return 0 # true
+    else
+        return 1 # false
     fi
-    echo 1 # '1' significa 'false' no Bash
-    return 1 # false
 }
 
 # ------------------------------------------------------
@@ -37,7 +36,7 @@ else
 fi
 
 # Verifica se o timeshift está instalado
-if [[ $(_isInstalledYay "timeshift") == "0" ]]; then
+if _isInstalledYay "timeshift"; then
     # Pergunta ao usuário se deseja criar um snapshot
     if gum confirm "VOCÊ DESEJA CRIAR UM SNAPSHOT?"; then
         echo
@@ -47,7 +46,7 @@ if [[ $(_isInstalledYay "timeshift") == "0" ]]; then
         sudo timeshift --create --comments "$c"
         sudo timeshift --list
         sudo grub-mkconfig -o /boot/grub/grub.cfg
-        echo ":: PRONTO. Snapshot $c criado!"
+        echo ":: PRONTO. Snapshot '$c' criado!"
         echo
     elif [ $? -eq 130 ]; then
         echo ":: Snapshot cancelado."
