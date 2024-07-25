@@ -22,6 +22,18 @@ then
     /usr/libexec/xdg-desktop-portal-hyprland &
 fi
 
+# Espera 2 segundos, para garantir que o xdg-desktop-portal-hyprland iniciou corretamente
+sleep 2
+
+# Inicia o xdg-desktop-portal-hyprland
+if command -v /usr/lib/xdg-desktop-portal-gtk &> /dev/null
+then
+    /usr/lib/xdg-desktop-portal-gtk &
+elif command -v /usr/libexec/xdg-desktop-portal-gtk &> /dev/null
+then
+    /usr/libexec/xdg-desktop-portal-gtk &
+fi
+
 # Espera 2 segundos para garantir que o xdg-desktop-portal-gtk iniciou corretamente
 sleep 2
 
